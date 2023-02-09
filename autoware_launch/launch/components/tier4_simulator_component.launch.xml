@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="launch_dummy_perception"/>
-  <arg name="launch_dummy_vehicle"/>
-  <arg name="launch_dummy_localization"/>
-  <arg name="perception/enable_detection_failure"/>
-  <arg name="perception/enable_object_recognition"/>
-  <arg name="sensing/visible_range"/>
-  <arg name="vehicle_model"/>
-  <arg name="initial_engage_state"/>
-  <arg name="vehicle_info_param_file"/>
+  <arg name="launch_dummy_perception" default="false"/>
+  <arg name="launch_dummy_vehicle" default="true"/>
+  <arg name="launch_dummy_localization" default="false"/>
+  <arg name="perception/enable_detection_failure" default="false"/>
+  <arg name="perception/enable_object_recognition" default="false"/>
+  <arg name="sensing/visible_range" default="300" />
+  <arg name="vehicle_model" default="storm"/>
+  <arg name="initial_engage_state" default="true"/>
+  <arg name="vehicle_info_param_file" value="$(find-pkg-share $(var vehicle_model)_description)/config/vehicle_info.param.yaml"/>
+
 
   <include file="$(find-pkg-share tier4_simulator_launch)/launch/simulator.launch.xml">
     <arg name="launch_dummy_perception" value="$(var launch_dummy_perception)"/>

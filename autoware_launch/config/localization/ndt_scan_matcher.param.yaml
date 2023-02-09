@@ -61,10 +61,10 @@
       ]
 
     # Regularization switch
-    regularization_enabled: false
+    regularization_enabled: true
 
     # regularization scale factor
-    regularization_scale_factor: 0.01
+    regularization_scale_factor: 1.0 #0.01
 
     # A flag for using scan matching score based on de-grounded LiDAR scan
     estimate_scores_for_degrounded_scan: false
